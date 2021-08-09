@@ -1,0 +1,396 @@
+
+Tue Jun 15 2021 20:14:08 GMT+0530 (IST) -- Binary semantic version is v8.1.1
+Tue Jun 15 2021 20:14:08 GMT+0530 (IST) -- Setting output as extra verbose with request parsing
+Tue Jun 15 2021 20:14:11 GMT+0530 (IST) -- [INFO] Started the BrowserStack Binary server on 45691, PID: 17195
+Tue Jun 15 2021 20:14:11 GMT+0530 (IST) -- [SUCCESS] You can now access your local server(s) in our remote browser
+
+Tue Jun 15 2021 20:14:12 GMT+0530 (IST) -- Connecting to BrowserStack using WebSocket protocol...
+Tue Jun 15 2021 20:14:12 GMT+0530 (IST) -- Platform supports WebSocket connections.
+
+Tue Jun 15 2021 20:14:13 GMT+0530 (IST) -- Connecting to BrowserStack using WebSocket protocol...
+Tue Jun 15 2021 20:14:13 GMT+0530 (IST) -- Press Ctrl-C to exit
+
+
+Tue Jun 15 2021 20:14:13 GMT+0530 (IST) -- Platform supports WebSocket connections.
+
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- ID-0 Request to: localhost:8000
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- ID-0 [PARSING HANDSHAKE][0][19840931] Handshake request to localhost:8000
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- ID-0 Connecting to: localhost:8000
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- Connecting with IPv6
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- ID-0 Connected to: ::1
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- ID-0 [PARSING REQUEST][0][19840931] GET / HTTP/1.1
+Host: localhost:8000
+sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"
+sec-ch-ua-mobile: ?0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- ID-0 [PARSING RESPONSE][0][19840931] HTTP/1.1 200 FROM localhost:8000
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- ID-0 Writing response from: localhost:8000
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- ID-0 Request to: localhost:8000
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- ID-0 [PARSING HANDSHAKE][0][19840953] Handshake request to localhost:8000
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- ID-0 Connecting to: localhost:8000
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- Connecting with IPv6
+Tue Jun 15 2021 20:14:20 GMT+0530 (IST) -- ID-0 Connected to: ::1
+Tue Jun 15 2021 20:14:21 GMT+0530 (IST) -- ID-0 [PARSING REQUEST][0][19840953] GET /favicon.ico HTTP/1.1
+Host: localhost:8000
+sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://localhost:8000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+Tue Jun 15 2021 20:14:21 GMT+0530 (IST) -- ID-0 [PARSING RESPONSE][0][19840953] HTTP/1.1 404 FROM localhost:8000
+Tue Jun 15 2021 20:14:21 GMT+0530 (IST) -- ID-0 Writing response from: localhost:8000
+Tue Jun 15 2021 20:14:22 GMT+0530 (IST) -- ID-0 Request to: localhost:8000
+Tue Jun 15 2021 20:14:22 GMT+0530 (IST) -- ID-0 [PARSING HANDSHAKE][0][19841020] Handshake request to localhost:8000
+Tue Jun 15 2021 20:14:22 GMT+0530 (IST) -- ID-0 Connecting to: localhost:8000
+Tue Jun 15 2021 20:14:22 GMT+0530 (IST) -- Connecting with IPv6
+Tue Jun 15 2021 20:14:22 GMT+0530 (IST) -- ID-0 Connected to: ::1
+Tue Jun 15 2021 20:14:22 GMT+0530 (IST) -- ID-0 [PARSING REQUEST][0][19841020] HEAD / HTTP/1.1
+Host: localhost:8000
+Accept: */*
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:30.0) Gecko/20100101 Firefox/30.0
+Connection: keep-alive
+
+
+Tue Jun 15 2021 20:14:22 GMT+0530 (IST) -- ID-0 [PARSING RESPONSE][0][19841020] HTTP/1.1 200 FROM localhost:8000
+Tue Jun 15 2021 20:14:22 GMT+0530 (IST) -- ID-0 Writing response from: localhost:8000
+Tue Jun 15 2021 20:14:22 GMT+0530 (IST) -- ID-0 Writing response from: localhost:8000
+
+
+
+
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- Binary semantic version is v8.1.1
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- Binary semantic version is v8.1.1
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- Setting output as extra verbose with request parsing
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- Setting output as extra verbose with request parsing
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- Binary semantic version is v8.1.1
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- Setting output as extra verbose with request parsing
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- Binary semantic version is v8.1.1
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- Setting output as extra verbose with request parsing
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- [ERROR] Necessary ports to start BrowserStack Binary were occupied by PID: -
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- [ERROR] Please ensure that 45691 is available to use
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- [ERROR] SYS_CONFLICT:1001 https://browserstack.com/docs/local-testing/binary/errors/1001
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- You can learn more about BrowserStack Binary flags by running ./BrowserStackLocal --help
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- [ERROR] Another instance of BrowserStack Binary is running with on your system with PID: 39268
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- [ERROR] Another instance of BrowserStack Binary is running with on your system with PID: 39268
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- [ERROR] Please close it and try again
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- [ERROR] SYS_CONFLICT:1001 https://browserstack.com/docs/local-testing/binary/errors/1001
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- You can learn more about BrowserStack Binary flags by running ./BrowserStackLocal --help
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- [ERROR] Please close it and try again
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- [ERROR] SYS_CONFLICT:1001 https://browserstack.com/docs/local-testing/binary/errors/1001
+Fri Jun 18 2021 00:10:31 GMT+0530 (IST) -- You can learn more about BrowserStack Binary flags by running ./BrowserStackLocal --help
+Fri Jun 18 2021 00:10:34 GMT+0530 (IST) -- [INFO] Started the BrowserStack Binary server on 45691, PID: 39268
+Fri Jun 18 2021 00:10:34 GMT+0530 (IST) -- [SUCCESS] You can now access your local server(s) in our remote browser
+
+Fri Jun 18 2021 00:10:36 GMT+0530 (IST) -- Connecting to BrowserStack using WebSocket protocol...
+Fri Jun 18 2021 00:10:36 GMT+0530 (IST) -- Platform supports WebSocket connections.
+
+Fri Jun 18 2021 00:10:36 GMT+0530 (IST) -- Press Ctrl-C to exit
+
+
+
+Fri Jun 18 2021 00:22:48 GMT+0530 (IST) -- Binary semantic version is v8.1.1
+Fri Jun 18 2021 00:22:48 GMT+0530 (IST) -- Setting output as extra verbose with request parsing
+Fri Jun 18 2021 00:22:51 GMT+0530 (IST) -- [INFO] Started the BrowserStack Binary server on 45691, PID: 39533
+Fri Jun 18 2021 00:22:52 GMT+0530 (IST) -- [SUCCESS] You can now access your local server(s) in our remote browser
+
+Fri Jun 18 2021 00:22:53 GMT+0530 (IST) -- Connecting to BrowserStack using WebSocket protocol...
+Fri Jun 18 2021 00:22:53 GMT+0530 (IST) -- Platform supports WebSocket connections.
+
+Fri Jun 18 2021 00:22:55 GMT+0530 (IST) -- Connecting to BrowserStack using WebSocket protocol...
+Fri Jun 18 2021 00:22:55 GMT+0530 (IST) -- Press Ctrl-C to exit
+
+
+Fri Jun 18 2021 00:22:55 GMT+0530 (IST) -- Platform supports WebSocket connections.
+
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Request to: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING HANDSHAKE][0][2024549] Handshake request to localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connecting to: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Request to: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING HANDSHAKE][0][2024552] Handshake request to localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connecting to: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connecting with IPv6
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connecting with IPv6
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connected to: ::1
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connected to: ::1
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING REQUEST][0][2024549] HEAD / HTTP/1.1
+Accept: */*
+User-Agent: Ruby, Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:30.0) Gecko/20100101 Firefox/30.0
+Connection: close
+Host: localhost:8000
+
+
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING REQUEST][0][2024552] GET / HTTP/1.1
+Host: localhost:8000
+Upgrade-Insecure-Requests: 1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING RESPONSE][0][2024549] HTTP/1.1 200 FROM localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Writing response from: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING RESPONSE][0][2024552] HTTP/1.1 200 FROM localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Writing response from: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Request to: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING HANDSHAKE][0][2024561] Handshake request to localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connecting to: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connecting with IPv6
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connected to: ::1
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING REQUEST][0][2024561] HEAD / HTTP/1.1
+Accept: */*
+User-Agent: Ruby, Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:30.0) Gecko/20100101 Firefox/30.0
+Connection: close
+Host: localhost:8000
+Connection: keep-alive
+
+
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING RESPONSE][0][2024561] HTTP/1.1 200 FROM localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Writing response from: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Request to: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING HANDSHAKE][0][2024568] Handshake request to localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connecting to: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connecting with IPv6
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connected to: ::1
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING REQUEST][0][2024568] GET /favicon.ico HTTP/1.1
+Host: localhost:8000
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15
+Accept-Language: en-us
+Referer: http://localhost:8000/
+Accept-Encoding: gzip, deflate
+
+
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING RESPONSE][0][2024568] HTTP/1.1 404 FROM localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Writing response from: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Request to: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING HANDSHAKE][0][2024571] Handshake request to localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connecting to: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connecting with IPv6
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connected to: ::1
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING REQUEST][0][2024571] GET / HTTP/1.1
+Host: localhost:8000
+sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"
+sec-ch-ua-mobile: ?0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING RESPONSE][0][2024571] HTTP/1.1 200 FROM localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Writing response from: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Request to: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING HANDSHAKE][0][2024575] Handshake request to localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connecting to: localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connecting with IPv6
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Connected to: ::1
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING REQUEST][0][2024575] GET /favicon.ico HTTP/1.1
+Host: localhost:8000
+sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://localhost:8000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- [PARSING RESPONSE][0][2024575] HTTP/1.1 404 FROM localhost:8000
+Fri Jun 18 2021 00:23:00 GMT+0530 (IST) -- Writing response from: localhost:8000
+Fri Jun 18 2021 00:23:02 GMT+0530 (IST) -- ID-0 Request to: localhost:8000
+Fri Jun 18 2021 00:23:02 GMT+0530 (IST) -- ID-0 [PARSING HANDSHAKE][0][2024622] Handshake request to localhost:8000
+Fri Jun 18 2021 00:23:02 GMT+0530 (IST) -- ID-0 Connecting to: localhost:8000
+Fri Jun 18 2021 00:23:02 GMT+0530 (IST) -- Connecting with IPv6
+Fri Jun 18 2021 00:23:02 GMT+0530 (IST) -- ID-0 Connected to: ::1
+Fri Jun 18 2021 00:23:02 GMT+0530 (IST) -- ID-0 [PARSING REQUEST][0][2024622] GET / HTTP/1.1
+Host: localhost:8000
+sec-ch-ua: " Not;A Brand";v="99", "Microsoft Edge";v="91", "Chromium";v="91"
+sec-ch-ua-mobile: ?0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36 Edg/91.0.864.37
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+Fri Jun 18 2021 00:23:02 GMT+0530 (IST) -- ID-0 [PARSING RESPONSE][0][2024622] HTTP/1.1 200 FROM localhost:8000
+Fri Jun 18 2021 00:23:02 GMT+0530 (IST) -- ID-0 Writing response from: localhost:8000
+Fri Jun 18 2021 00:23:03 GMT+0530 (IST) -- ID-0 Request to: localhost:8000
+Fri Jun 18 2021 00:23:03 GMT+0530 (IST) -- ID-0 [PARSING HANDSHAKE][0][2024639] Handshake request to localhost:8000
+Fri Jun 18 2021 00:23:03 GMT+0530 (IST) -- ID-0 Connecting to: localhost:8000
+Fri Jun 18 2021 00:23:03 GMT+0530 (IST) -- Connecting with IPv6
+Fri Jun 18 2021 00:23:03 GMT+0530 (IST) -- ID-0 Connected to: ::1
+Fri Jun 18 2021 00:23:03 GMT+0530 (IST) -- ID-0 [PARSING REQUEST][0][2024639] GET /favicon.ico HTTP/1.1
+Host: localhost:8000
+sec-ch-ua: " Not;A Brand";v="99", "Microsoft Edge";v="91", "Chromium";v="91"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36 Edg/91.0.864.37
+Accept: image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://localhost:8000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+Fri Jun 18 2021 00:23:03 GMT+0530 (IST) -- ID-0 [PARSING RESPONSE][0][2024639] HTTP/1.1 404 FROM localhost:8000
+Fri Jun 18 2021 00:23:03 GMT+0530 (IST) -- ID-0 Writing response from: localhost:8000
+Fri Jun 18 2021 00:23:14 GMT+0530 (IST) -- ID-0 Request to: localhost:8000
+Fri Jun 18 2021 00:23:14 GMT+0530 (IST) -- ID-0 [PARSING HANDSHAKE][0][2024857] Handshake request to localhost:8000
+Fri Jun 18 2021 00:23:14 GMT+0530 (IST) -- ID-0 Connecting to: localhost:8000
+Fri Jun 18 2021 00:23:14 GMT+0530 (IST) -- Connecting with IPv6
+Fri Jun 18 2021 00:23:14 GMT+0530 (IST) -- ID-0 Connected to: ::1
+Fri Jun 18 2021 00:23:14 GMT+0530 (IST) -- ID-0 [PARSING REQUEST][0][2024857] GET / HTTP/1.1
+Host: localhost:8000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+Fri Jun 18 2021 00:23:14 GMT+0530 (IST) -- ID-0 [PARSING RESPONSE][0][2024857] HTTP/1.1 200 FROM localhost:8000
+Fri Jun 18 2021 00:23:14 GMT+0530 (IST) -- ID-0 Writing response from: localhost:8000
+Fri Jun 18 2021 00:23:14 GMT+0530 (IST) -- ID-0 Writing response from: localhost:8000
+Fri Jun 18 2021 00:23:15 GMT+0530 (IST) -- ID-0 Request to: localhost:8000
+Fri Jun 18 2021 00:23:15 GMT+0530 (IST) -- ID-0 [PARSING HANDSHAKE][0][2024885] Handshake request to localhost:8000
+Fri Jun 18 2021 00:23:15 GMT+0530 (IST) -- ID-0 Connecting to: localhost:8000
+Fri Jun 18 2021 00:23:15 GMT+0530 (IST) -- Connecting with IPv6
+Fri Jun 18 2021 00:23:15 GMT+0530 (IST) -- ID-0 Connected to: ::1
+Fri Jun 18 2021 00:23:15 GMT+0530 (IST) -- ID-0 [PARSING REQUEST][0][2024885] GET /favicon.ico HTTP/1.1
+Host: localhost:8000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://localhost:8000/
+
+
+Fri Jun 18 2021 00:23:15 GMT+0530 (IST) -- ID-0 [PARSING RESPONSE][0][2024885] HTTP/1.1 404 FROM localhost:8000
+Fri Jun 18 2021 00:23:15 GMT+0530 (IST) -- ID-0 Writing response from: localhost:8000
+Fri Jun 18 2021 00:23:17 GMT+0530 (IST) -- ID-0 Request to: localhost:8000
+Fri Jun 18 2021 00:23:17 GMT+0530 (IST) -- ID-0 [PARSING HANDSHAKE][0][2024952] Handshake request to localhost:8000
+Fri Jun 18 2021 00:23:17 GMT+0530 (IST) -- ID-0 Connecting to: localhost:8000
+Fri Jun 18 2021 00:23:17 GMT+0530 (IST) -- Connecting with IPv6
+Fri Jun 18 2021 00:23:17 GMT+0530 (IST) -- ID-0 Connected to: ::1
+Fri Jun 18 2021 00:23:17 GMT+0530 (IST) -- ID-0 [PARSING REQUEST][0][2024952] HEAD / HTTP/1.1
+Host: localhost:8000
+Accept: */*
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:30.0) Gecko/20100101 Firefox/30.0
+
+
+Fri Jun 18 2021 00:23:17 GMT+0530 (IST) -- ID-0 [PARSING RESPONSE][0][2024952] HTTP/1.1 200 FROM localhost:8000
+Fri Jun 18 2021 00:23:17 GMT+0530 (IST) -- ID-0 Writing response from: localhost:8000
+
+Mon Jul 05 2021 17:59:57 GMT+0530 (IST) -- Binary semantic version is v8.1.1
+Mon Jul 05 2021 17:59:57 GMT+0530 (IST) -- Setting output as extra verbose with request parsing
+Mon Jul 05 2021 18:00:00 GMT+0530 (IST) -- [INFO] Started the BrowserStack Binary server on 45691, PID: 51547
+Mon Jul 05 2021 18:00:00 GMT+0530 (IST) -- [SUCCESS] You can now access your local server(s) in our remote browser
+
+Mon Jul 05 2021 18:00:01 GMT+0530 (IST) -- Connecting to BrowserStack using WebSocket protocol...
+Mon Jul 05 2021 18:00:01 GMT+0530 (IST) -- Platform supports WebSocket connections.
+
+Mon Jul 05 2021 18:00:04 GMT+0530 (IST) -- Connecting to BrowserStack using WebSocket protocol...
+Mon Jul 05 2021 18:00:04 GMT+0530 (IST) -- Platform supports WebSocket connections.
+
+Mon Jul 05 2021 18:00:04 GMT+0530 (IST) -- Press Ctrl-C to exit
+
+
+Mon Jul 05 2021 18:00:25 GMT+0530 (IST) -- Request to: localhost:8000
+Mon Jul 05 2021 18:00:25 GMT+0530 (IST) -- [PARSING HANDSHAKE][0][3684404] Handshake request to localhost:8000
+Mon Jul 05 2021 18:00:25 GMT+0530 (IST) -- Connecting to: localhost:8000
+Mon Jul 05 2021 18:00:25 GMT+0530 (IST) -- Connected to: 127.0.0.1
+Mon Jul 05 2021 18:00:25 GMT+0530 (IST) -- [PARSING REQUEST][0][3684404] GET / HTTP/1.1
+Host: localhost:8000
+sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"
+sec-ch-ua-mobile: ?0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+Mon Jul 05 2021 18:00:25 GMT+0530 (IST) -- [PARSING RESPONSE][0][3684404] HTTP/1.1 200 FROM localhost:8000
+Mon Jul 05 2021 18:00:25 GMT+0530 (IST) -- Writing response from: localhost:8000
+Mon Jul 05 2021 18:00:25 GMT+0530 (IST) -- Writing response from: localhost:8000
+Mon Jul 05 2021 18:00:25 GMT+0530 (IST) -- Request to: localhost:8000
+Mon Jul 05 2021 18:00:25 GMT+0530 (IST) -- [PARSING HANDSHAKE][0][3684419] Handshake request to localhost:8000
+Mon Jul 05 2021 18:00:25 GMT+0530 (IST) -- Connecting to: localhost:8000
+Mon Jul 05 2021 18:00:25 GMT+0530 (IST) -- Connected to: 127.0.0.1
+Mon Jul 05 2021 18:00:26 GMT+0530 (IST) -- [PARSING REQUEST][0][3684419] GET /favicon.ico HTTP/1.1
+Host: localhost:8000
+sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://localhost:8000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+
+
+Mon Jul 05 2021 18:00:26 GMT+0530 (IST) -- [PARSING RESPONSE][0][3684419] HTTP/1.1 404 FROM localhost:8000
+Mon Jul 05 2021 18:00:26 GMT+0530 (IST) -- Writing response from: localhost:8000
+Mon Jul 05 2021 18:00:27 GMT+0530 (IST) -- Request to: localhost:8000
+Mon Jul 05 2021 18:00:27 GMT+0530 (IST) -- [PARSING HANDSHAKE][0][3684445] Handshake request to localhost:8000
+Mon Jul 05 2021 18:00:27 GMT+0530 (IST) -- Connecting to: localhost:8000
+Mon Jul 05 2021 18:00:27 GMT+0530 (IST) -- Connected to: 127.0.0.1
+Mon Jul 05 2021 18:00:27 GMT+0530 (IST) -- [PARSING REQUEST][0][3684445] HEAD / HTTP/1.1
+Host: localhost:8000
+Accept: */*
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:30.0) Gecko/20100101 Firefox/30.0
+Connection: keep-alive
+
+
+Mon Jul 05 2021 18:00:27 GMT+0530 (IST) -- [PARSING RESPONSE][0][3684445] HTTP/1.1 200 FROM localhost:8000
+Mon Jul 05 2021 18:00:27 GMT+0530 (IST) -- Writing response from: localhost:8000

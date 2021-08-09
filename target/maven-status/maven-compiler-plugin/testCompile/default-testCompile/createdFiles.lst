@@ -1,0 +1,14 @@
+com/web/test/SingleTest.class
+com/web/test/ParallelTest.class
+com/web/test/LocalParallelTest.class
+com/app/test/XCUITest.class
+com/web/test/FailTest.class
+com/app/test/TempTest.class
+com/app/test/PlayStoreTest$1.class
+com/app/test/AppiumParallelTest.class
+com/app/test/AppiumFailTest.class
+com/app/test/AppiumLocalTest.class
+com/app/test/PlayStoreTest.class
+com/web/test/LocalTest.class
+com/app/test/EspressoTest.class
+com/app/test/AppiumSingleTest.class
