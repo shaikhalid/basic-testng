@@ -3,7 +3,7 @@
 <suite name="BrowserStack Suite">
     <test name="BrowserStack Chrome Test">
         <classes>
-            <class name="com.web.test.SingleTest"/>
+            <class name="com.web.test.ParallelTest"/>
         </classes>
     </test>
     <test name="BrowserStack Firefox Test">
