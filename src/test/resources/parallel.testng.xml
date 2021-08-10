@@ -22,7 +22,7 @@
             <class name="com.web.test.ParallelTest"/>
         </classes>
     </test>
-    <test name="BrowserStack Firefox Test">
+    <test name="BrowserStack Mobile Test">
         <classes>
             <class name="com.app.test.AppiumSingleTest"/>
         </classes>
