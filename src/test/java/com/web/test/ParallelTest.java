@@ -2,6 +2,7 @@ package com.web.test;
 
 import io.restassured.path.json.JsonPath;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -21,7 +22,7 @@ import java.util.Map;
 
 public class ParallelTest {
 
-    private static final ThreadLocal<RemoteWebDriver> driverThread = new ThreadLocal<>();
+    private static final ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
 
     private static final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     private static final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
@@ -50,7 +51,8 @@ public class ParallelTest {
 
     @AfterTest(alwaysRun = true)
     public void teardown() {
-        driverThread.get().executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"BrowserStack search passed\"}}");
+        JavascriptExecutor js = (JavascriptExecutor) driverThread.get();
+        js.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"BrowserStack search passed\"}}");
         driverThread.get().quit();
         driverThread.remove();
     }

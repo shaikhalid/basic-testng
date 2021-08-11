@@ -1,11 +1,13 @@
 package com.app.test;
 
+import io.appium.java_client.MobileDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.restassured.authentication.PreemptiveBasicAuthScheme;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.path.json.JsonPath;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -25,7 +27,7 @@ import static io.restassured.RestAssured.*;
 
 public class AppiumParallelTest {
 
-    private static final ThreadLocal<AndroidDriver<AndroidElement>> driverThread = new ThreadLocal<>();
+    private static final ThreadLocal<MobileDriver<AndroidElement>> driverThread = new ThreadLocal<>();
 
     private static final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     private static final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
@@ -59,7 +61,7 @@ public class AppiumParallelTest {
 
     @BeforeTest(alwaysRun = true)
     @Parameters({"config", "environment"})
-    public void setup(String configFile, String environment) throws MalformedURLException {
+    public void setupDriver(String configFile, String environment) throws MalformedURLException {
         JsonPath jsonPath = JsonPath.from(new File("src/test/resources/app/config/" + configFile));
         Map<String, String> capDetails = new HashMap<>();
         capDetails.putAll(jsonPath.getMap("capabilities"));
@@ -70,7 +72,7 @@ public class AppiumParallelTest {
 
     @Test
     public void searchWikipedia() {
-        Wait<AndroidDriver<AndroidElement>> wait = new FluentWait<>(driverThread.get())
+        Wait<MobileDriver<AndroidElement>> wait = new FluentWait<>(driverThread.get())
                 .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(500))
                 .ignoring(NotFoundException.class);
@@ -84,7 +86,8 @@ public class AppiumParallelTest {
 
     @AfterTest(alwaysRun = true)
     public void tearDown() {
-        driverThread.get().executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Wikipedia search passed\"}}");
+        JavascriptExecutor js = (JavascriptExecutor) driverThread.get();
+        js.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Wikipedia search passed\"}}");
         driverThread.get().quit();
         driverThread.remove();
     }

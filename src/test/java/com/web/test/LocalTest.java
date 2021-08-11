@@ -1,13 +1,14 @@
 package com.web.test;
 
 import com.browserstack.local.Local;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,11 +18,21 @@ public class LocalTest {
     private static final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     private static final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
     private static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
-    private static RemoteWebDriver driver;
-    private static Local local;
+    private WebDriver driver;
+    private Local local;
+
+    @BeforeSuite
+    public void setupLocal() throws Exception {
+        local = new Local();
+        Map<String, String> bsLocalArgs = new HashMap<>();
+        bsLocalArgs.put("key", ACCESS_KEY);
+        bsLocalArgs.put("v", "true");
+        bsLocalArgs.put("logFile", "logs.txt");
+        local.start(bsLocalArgs);
+    }
 
     @BeforeTest(alwaysRun = true)
-    public void setup() throws Exception {
+    public void setupDriver() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("project", "BrowserStack");
         caps.setCapability("build", "Demo");
@@ -35,13 +46,6 @@ public class LocalTest {
         caps.setCapability("browserstack.debug", "true");
         caps.setCapability("browserstack.local", "true");
 
-        local = new Local();
-        Map<String, String> bsLocalArgs = new HashMap<>();
-        bsLocalArgs.put("key", ACCESS_KEY);
-        bsLocalArgs.put("v", "true");
-        bsLocalArgs.put("logFile", "logs.txt");
-        local.start(bsLocalArgs);
-
         driver = new RemoteWebDriver(new URL(URL), caps);
     }
 
@@ -52,9 +56,14 @@ public class LocalTest {
     }
 
     @AfterTest(alwaysRun = true)
-    public void teardown() throws Exception {
-        driver.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Local testing passed\"}}");
+    public void closeDriver() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Local testing passed\"}}");
         driver.quit();
+    }
+
+    @AfterSuite(alwaysRun = true)
+    public void closeLocal() throws Exception {
         local.stop();
     }
 

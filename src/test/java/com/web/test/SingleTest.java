@@ -1,6 +1,8 @@
 package com.web.test;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,7 +21,7 @@ public class SingleTest {
     private static final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     private static final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
     private static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
-    private static RemoteWebDriver driver;
+    private WebDriver driver;
 
     @BeforeTest(alwaysRun = true)
     public void setup() throws MalformedURLException {
@@ -27,9 +29,7 @@ public class SingleTest {
         caps.setCapability("project", "BrowserStack");
         caps.setCapability("build", "Demo");
         String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-        if (buildName != null) {
-            caps.setCapability("build", buildName);
-        }
+        if (buildName != null) caps.setCapability("build", buildName);
         caps.setCapability("name", "Single Test - Chrome");
 
         caps.setCapability("os", "Windows");
@@ -55,7 +55,8 @@ public class SingleTest {
 
     @AfterTest(alwaysRun = true)
     public void teardown() {
-        driver.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"BrowserStack search passed\"}}");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"BrowserStack search passed\"}}");
         driver.quit();
     }
 

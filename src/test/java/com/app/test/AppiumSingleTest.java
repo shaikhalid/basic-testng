@@ -1,10 +1,12 @@
 package com.app.test;
 
+import io.appium.java_client.MobileDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.restassured.authentication.PreemptiveBasicAuthScheme;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -25,11 +27,10 @@ import static io.restassured.RestAssured.*;
 
 public class AppiumSingleTest {
 
-    private static AndroidDriver<AndroidElement> driver;
-
     private static final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     private static final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
     private static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
+    private MobileDriver<AndroidElement> driver;
 
     @BeforeSuite(alwaysRun = true)
     public void setupApp() {
@@ -78,7 +79,7 @@ public class AppiumSingleTest {
 
     @Test
     public void searchWikipedia() {
-        Wait<AndroidDriver<AndroidElement>> wait = new FluentWait<>(driver)
+        Wait<MobileDriver<AndroidElement>> wait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(500))
                 .ignoring(NotFoundException.class);
@@ -92,7 +93,8 @@ public class AppiumSingleTest {
 
     @AfterTest(alwaysRun = true)
     public void tearDown() {
-        driver.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Wikipedia search passed\"}}");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Wikipedia search passed\"}}");
         driver.quit();
     }
 }
