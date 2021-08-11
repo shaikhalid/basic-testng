@@ -57,10 +57,12 @@ public class AppiumLocalTest {
         } else {
             System.out.println("Using previously uploaded app...");
         }
+        System.out.println("Connecting local");
         local = new Local();
         Map<String, String> options = new HashMap<>();
         options.put("key", ACCESS_KEY);
         local.start(options);
+        System.out.println("Connected. Now testing...");
     }
 
     @BeforeTest(alwaysRun = true)
@@ -103,6 +105,7 @@ public class AppiumLocalTest {
     @AfterSuite(alwaysRun = true)
     public void closeLocal() throws Exception {
         local.stop();
+        System.out.println("Binary stopped");
     }
 
 }

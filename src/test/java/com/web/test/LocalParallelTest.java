@@ -26,12 +26,14 @@ public class LocalParallelTest {
 
     @BeforeSuite(alwaysRun = true)
     public void before() throws Exception {
+        System.out.println("Connecting local");
         local = new Local();
         Map<String, String> bsLocalArgs = new HashMap<>();
         bsLocalArgs.put("key", ACCESS_KEY);
         bsLocalArgs.put("v", "true");
         bsLocalArgs.put("logFile", "logs.txt");
         local.start(bsLocalArgs);
+        System.out.println("Connected. Now testing...");
     }
 
     @BeforeTest(alwaysRun = true)
@@ -65,6 +67,7 @@ public class LocalParallelTest {
     @AfterSuite
     public void after() throws Exception {
         local.stop();
+        System.out.println("Binary stopped");
     }
 
 }
