@@ -69,7 +69,12 @@ public class AppiumLocalTest {
     public void setupDriver() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("project", "BrowserStack");
-        caps.setCapability("build", "Demo");
+        String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+        if (buildName != null) {
+            caps.setCapability("build", buildName);
+        } else {
+            caps.setCapability("build", "Demo");
+        }
         caps.setCapability("name", "Local Testing - Google Pixel 3");
 
         caps.setCapability("device", "Google Pixel 3");

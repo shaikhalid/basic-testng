@@ -62,7 +62,12 @@ public class AppiumSingleTest {
     public void setup() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("project", "BrowserStack");
-        caps.setCapability("build", "Demo");
+        String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+        if (buildName != null) {
+            caps.setCapability("build", buildName);
+        } else {
+            caps.setCapability("build", "Demo");
+        }
         caps.setCapability("name", "Wikipedia Search Function - Google Pixel 3");
 
         caps.setCapability("device", "Google Pixel 3");

@@ -67,6 +67,8 @@ public class AppiumParallelTest {
         capDetails.putAll(jsonPath.getMap("capabilities"));
         capDetails.putAll(jsonPath.getMap("environments." + environment));
         DesiredCapabilities caps = new DesiredCapabilities(capDetails);
+        String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+        if (buildName != null) caps.setCapability("build", buildName);
         driverThread.set(new AndroidDriver<>(new URL(URL), caps));
     }
 

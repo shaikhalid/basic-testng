@@ -45,7 +45,8 @@ public class LocalParallelTest {
         capDetails.putAll(jsonPath.getMap("environments." + environment));
         DesiredCapabilities caps = new DesiredCapabilities(capDetails);
         caps.setCapability("browserstack.local", "true");
-
+        String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+        if (buildName != null) caps.setCapability("build", buildName);
         driverThread.set(new RemoteWebDriver(new URL(URL), caps));
     }
 
