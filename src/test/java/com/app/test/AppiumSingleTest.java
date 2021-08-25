@@ -46,12 +46,12 @@ public class AppiumSingleTest {
                 .expectStatusCode(200)
                 .build();
         List<String> customIds = get("recent_apps").jsonPath().getList("custom_id");
-        if (customIds == null || !customIds.contains("DemoApp")) {
+        if (customIds == null || !customIds.contains("ScreenshotBlockApp")) {
             System.out.println("Uploading app...");
             given()
                     .header("Content-Type", "multipart/form-data")
-                    .multiPart("file", new File("src/test/resources/app/appdata/WikipediaSample.apk"), "text/apk")
-                    .param("custom_id", "DemoApp")
+                    .multiPart("file", new File("src/test/resources/app/appdata/wf_app.apk"), "text/apk")
+                    .param("custom_id", "ScreenshotBlockApp")
                     .post("upload");
         } else {
             System.out.println("Using previously uploaded app...");
@@ -62,13 +62,13 @@ public class AppiumSingleTest {
     public void setup() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("project", "BrowserStack");
-        caps.setCapability("build", "Demo");
-        caps.setCapability("name", "Wikipedia Search Function - Google Pixel 3");
+        caps.setCapability("build", "Beta Features");
+        caps.setCapability("name", "Screenshot Blocked - Google Pixel 3");
 
         caps.setCapability("device", "Google Pixel 3");
         caps.setCapability("os_version", "10.0");
         caps.setCapability("real_mobile", "true");
-        caps.setCapability("app", "DemoApp");
+        caps.setCapability("app", "ScreenshotBlockApp");
 
         driver = new AndroidDriver<>(new URL(URL), caps);
     }
