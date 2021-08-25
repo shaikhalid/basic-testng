@@ -1,8 +1,8 @@
 package com.app.test;
 
 import io.appium.java_client.MobileDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.restassured.authentication.PreemptiveBasicAuthScheme;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -30,7 +30,7 @@ public class AppiumSingleTest {
     private static final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     private static final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
     private static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
-    private MobileDriver<AndroidElement> driver;
+    private MobileDriver<MobileElement> driver;
 
     @BeforeSuite(alwaysRun = true)
     public void setupApp() {
@@ -75,15 +75,15 @@ public class AppiumSingleTest {
 
     @Test
     public void searchWikipedia() {
-        Wait<MobileDriver<AndroidElement>> wait = new FluentWait<>(driver)
+        Wait<MobileDriver<MobileElement>> wait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(500))
                 .ignoring(NotFoundException.class);
-        AndroidElement searchElement = wait.until(d -> d.findElementByAccessibilityId("Search Wikipedia"));
+        MobileElement searchElement = wait.until(d -> d.findElementByAccessibilityId("Search Wikipedia"));
         searchElement.click();
-        AndroidElement insertTextElement = wait.until(d -> d.findElementById("org.wikipedia.alpha:id/search_src_text"));
+        MobileElement insertTextElement = wait.until(d -> d.findElementById("org.wikipedia.alpha:id/search_src_text"));
         insertTextElement.sendKeys("BrowserStack");
-        List<AndroidElement> allProductName = wait.until(d -> d.findElementsByClassName("android.widget.TextView"));
+        List<MobileElement> allProductName = wait.until(d -> d.findElementsByClassName("android.widget.TextView"));
         Assert.assertTrue(allProductName.size() > 0, "Products are not present");
     }
 

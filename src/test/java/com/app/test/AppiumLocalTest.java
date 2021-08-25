@@ -2,8 +2,8 @@ package com.app.test;
 
 import com.browserstack.local.Local;
 import io.appium.java_client.MobileDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.restassured.authentication.PreemptiveBasicAuthScheme;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -30,7 +30,7 @@ public class AppiumLocalTest {
     private static final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     private static final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
     private static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
-    private MobileDriver<AndroidElement> driver;
+    private MobileDriver<MobileElement> driver;
     private Local local;
 
     @BeforeSuite(alwaysRun = true)
@@ -84,13 +84,13 @@ public class AppiumLocalTest {
 
     @Test
     public void test() {
-        Wait<MobileDriver<AndroidElement>> wait = new FluentWait<>(driver)
+        Wait<MobileDriver<MobileElement>> wait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(500))
                 .ignoring(NotFoundException.class);
-        AndroidElement searchElement = wait.until(d -> d.findElementById("com.example.android.basicnetworking:id/test_action"));
+        MobileElement searchElement = wait.until(d -> d.findElementById("com.example.android.basicnetworking:id/test_action"));
         searchElement.click();
-        List<AndroidElement> allTextViewElements = wait.until(d -> d.findElementsByClassName("android.widget.TextView"));
+        List<MobileElement> allTextViewElements = wait.until(d -> d.findElementsByClassName("android.widget.TextView"));
         boolean textPresent = allTextViewElements.stream().anyMatch(e -> e.getText().contains("The active connection is wifi."));
         Assert.assertTrue(textPresent, "Text is not present");
     }
