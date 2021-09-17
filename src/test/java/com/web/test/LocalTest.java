@@ -29,6 +29,7 @@ public class LocalTest {
         bsLocalArgs.put("key", ACCESS_KEY);
         bsLocalArgs.put("v", "true");
         bsLocalArgs.put("logFile", "logs.txt");
+        bsLocalArgs.put("binarypath", "./src/test/resources/BrowserStackLocal");
         local.start(bsLocalArgs);
         System.out.println("Connected. Now testing...");
     }
