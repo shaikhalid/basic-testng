@@ -2,6 +2,7 @@ package com.web.test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -14,7 +15,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 public class SingleTest {
 
@@ -43,18 +44,19 @@ public class SingleTest {
     @Test
     public void testSearchBrowserStack() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        driver.get("http://www.google.com");
-        driver.findElement(By.name("q")).sendKeys("BrowserStack");
-        driver.findElement(By.name("q")).submit();
-        driver.findElement(By.cssSelector("a[href='https://www.browserstack.com/']")).click();
-        String title = "Most Reliable App & Cross Browser Testing Platform | BrowserStack";
-        Assert.assertTrue(wait.until(titleIs(title)), "Incorrect Title");
+        driver.get("https://bstackdemo.com");
+        wait.until(elementToBeClickable(By.id("signin"))).click();
+        wait.until(elementToBeClickable(By.cssSelector("#username input"))).sendKeys("fav_user" + Keys.TAB);
+        driver.findElement(By.cssSelector("#password input")).sendKeys("testingisfun99" + Keys.TAB);
+        driver.findElement(By.id("login-btn")).click();
+        String username = wait.until(presenceOfElementLocated(By.className("username"))).getText();
+        Assert.assertEquals(username, "fav_user", "Incorrect username");
     }
 
     @AfterTest(alwaysRun = true)
     public void teardown() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"BrowserStack search passed\"}}");
+        js.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"BStackDemo login passed\"}}");
         driver.quit();
     }
 

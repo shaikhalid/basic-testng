@@ -3,10 +3,10 @@ package com.web.test;
 import io.restassured.path.json.JsonPath;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -19,6 +19,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
 public class ParallelTest {
 
@@ -40,19 +43,22 @@ public class ParallelTest {
     }
 
     @Test
-    public void testSearchBrowserStack() {
+    public void testBStackDemoLogin() {
         WebDriver driver = driverThread.get();
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        driver.get("http://www.google.com");
-        driver.findElement(By.name("q")).sendKeys("BrowserStack");
-        driver.findElement(By.name("q")).submit();
-        Assert.assertTrue(wait.until(ExpectedConditions.titleIs("BrowserStack - Google Search")), "Incorrect Title");
+        driver.get("https://bstackdemo.com");
+        wait.until(elementToBeClickable(By.id("signin"))).click();
+        wait.until(elementToBeClickable(By.cssSelector("#username input"))).sendKeys("fav_user" + Keys.TAB);
+        driver.findElement(By.cssSelector("#password input")).sendKeys("testingisfun99" + Keys.TAB);
+        driver.findElement(By.id("login-btn")).click();
+        String username = wait.until(presenceOfElementLocated(By.className("username"))).getText();
+        Assert.assertEquals(username, "fav_user", "Incorrect username");
     }
 
     @AfterTest(alwaysRun = true)
     public void teardown() {
         JavascriptExecutor js = (JavascriptExecutor) driverThread.get();
-        js.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"BrowserStack search passed\"}}");
+        js.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"BStackDemo login passed\"}}");
         driverThread.get().quit();
         driverThread.remove();
     }
