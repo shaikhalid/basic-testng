@@ -31,7 +31,7 @@ public class AppiumParallelTest {
 
     private static final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     private static final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
-    private static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
+    private static final String URL = "http://hub-cloud.browserstack.com/wd/hub";
 
     @BeforeSuite(alwaysRun = true)
     public void setupApp() {
@@ -67,6 +67,8 @@ public class AppiumParallelTest {
         capDetails.putAll(jsonPath.getMap("capabilities"));
         capDetails.putAll(jsonPath.getMap("environments." + environment));
         DesiredCapabilities caps = new DesiredCapabilities(capDetails);
+        caps.setCapability("browserstack.user", USERNAME);
+        caps.setCapability("browserstack.key", ACCESS_KEY);
         driverThread.set(new AndroidDriver<>(new URL(URL), caps));
     }
 

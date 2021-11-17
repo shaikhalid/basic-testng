@@ -29,7 +29,7 @@ public class AppiumLocalTest {
 
     private static final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     private static final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
-    private static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
+    private static final String URL = "http://hub-cloud.browserstack.com/wd/hub";
     private MobileDriver<MobileElement> driver;
     private Local local;
 
@@ -77,6 +77,9 @@ public class AppiumLocalTest {
         caps.setCapability("real_mobile", "true");
         caps.setCapability("app", "LocalApp");
 
+        caps.setCapability("browserstack.user", USERNAME);
+        caps.setCapability("browserstack.key", ACCESS_KEY);
+        caps.setCapability("browserstack.debug", "true");
         caps.setCapability("browserstack.local", "true");
 
         driver = new AndroidDriver<>(new URL(URL), caps);

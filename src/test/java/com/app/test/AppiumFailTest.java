@@ -29,7 +29,7 @@ public class AppiumFailTest {
 
     private static final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     private static final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
-    private static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
+    private static final String URL = "http://hub-cloud.browserstack.com/wd/hub";
     private MobileDriver<MobileElement> driver;
 
     @BeforeSuite(alwaysRun = true)
@@ -70,6 +70,10 @@ public class AppiumFailTest {
         caps.setCapability("real_mobile", "true");
         caps.setCapability("app", "DemoApp");
 
+        caps.setCapability("browserstack.user", USERNAME);
+        caps.setCapability("browserstack.key", ACCESS_KEY);
+        caps.setCapability("browserstack.debug", "true");
+
         driver = new AndroidDriver<>(new URL(URL), caps);
     }
 
@@ -84,7 +88,7 @@ public class AppiumFailTest {
         MobileElement insertTextElement = wait.until(d -> d.findElementById("org.wikipedia.alpha:id/search_src_text"));
         insertTextElement.sendKeys("BrowserStack");
         List<MobileElement> allProductName = wait.until(d -> d.findElementsByClassName("android.widget.TextView"));
-        Assert.assertTrue(allProductName.size() == 0, "Products are present");
+        Assert.assertTrue(allProductName.isEmpty(), "Products are present");
     }
 
     @AfterTest(alwaysRun = true)
