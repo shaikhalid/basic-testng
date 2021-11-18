@@ -1,5 +1,6 @@
-package com.app.test;
+package com.parallel.test;
 
+import com.app.test.DeviceDetails;
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -16,6 +17,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.io.File;
+import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
@@ -27,13 +29,17 @@ import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.*;
 
-public class AppiumParallelTest {
+public class BaseTest {
 
     private static final ThreadLocal<MobileDriver<MobileElement>> driverThread = new ThreadLocal<>();
 
     private static final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     private static final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
     private static final String URL = "http://hub-cloud.browserstack.com/wd/hub";
+
+    public static MobileDriver<MobileElement> getMobileDriver() {
+        return driverThread.get();
+    }
 
     @BeforeSuite(alwaysRun = true)
     public void setupApp() {
@@ -61,12 +67,11 @@ public class AppiumParallelTest {
         }
     }
 
-    @BeforeTest(alwaysRun = true)
-    @Parameters("config")
-    public void setupDriver(String configFile) throws MalformedURLException {
-        JsonPath jsonPath = JsonPath.from(new File("src/test/resources/app/config/" + configFile));
-        Map<String, String> capDetails = new HashMap<>(jsonPath.getMap("capabilities"));
-        DesiredCapabilities caps = new DesiredCapabilities(capDetails);
+    @BeforeMethod(alwaysRun = true)
+    public void setupDriver(Method m) throws MalformedURLException {
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("project", "BrowserStack");
+        caps.setCapability("build", "Demo");
         caps.setCapability("browserstack.user", USERNAME);
         caps.setCapability("browserstack.key", ACCESS_KEY);
         List<DeviceDetails> androidDevices = get("devices.json")
@@ -81,27 +86,13 @@ public class AppiumParallelTest {
         caps.setCapability("os", deviceDetails.getOs());
         caps.setCapability("os_version", deviceDetails.getOs_version());
         caps.setCapability("device", deviceDetails.getDevice());
-        caps.setCapability("name", "Wikipedia Search Function - " + deviceDetails.getDevice());
+        caps.setCapability("name", m.getName() + " - " + deviceDetails.getDevice());
         caps.setCapability("app", "DemoApp");
 
         driverThread.set(new AndroidDriver<>(new URL(URL), caps));
     }
 
-    @Test
-    public void searchWikipedia() {
-        Wait<MobileDriver<MobileElement>> wait = new FluentWait<>(driverThread.get())
-                .withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofMillis(500))
-                .ignoring(NotFoundException.class);
-        MobileElement searchElement = wait.until(d -> d.findElementByAccessibilityId("Search Wikipedia"));
-        searchElement.click();
-        MobileElement insertTextElement = wait.until(d -> d.findElementById("org.wikipedia.alpha:id/search_src_text"));
-        insertTextElement.sendKeys("BrowserStack");
-        List<MobileElement> allProductName = wait.until(d -> d.findElementsByClassName("android.widget.TextView"));
-        Assert.assertTrue(allProductName.size() > 0, "Products are not present");
-    }
-
-    @AfterTest(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         JavascriptExecutor js = (JavascriptExecutor) driverThread.get();
         js.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Wikipedia search passed\"}}");
