@@ -1,29 +1,20 @@
-package com.parallel.test;
+package com.app.parallel.test;
 
-import com.app.test.DeviceDetails;
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.restassured.authentication.PreemptiveBasicAuthScheme;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.path.json.JsonPath;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.io.File;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
@@ -83,10 +74,10 @@ public class BaseTest {
         int randomNumber = ThreadLocalRandom.current().nextInt(0, androidDevices.size());
         DeviceDetails deviceDetails = androidDevices.get(randomNumber);
         System.out.println(deviceDetails);
+        caps.setCapability("name", m.getName() + " - " + deviceDetails.getDevice());
         caps.setCapability("os", deviceDetails.getOs());
         caps.setCapability("os_version", deviceDetails.getOs_version());
         caps.setCapability("device", deviceDetails.getDevice());
-        caps.setCapability("name", m.getName() + " - " + deviceDetails.getDevice());
         caps.setCapability("app", "DemoApp");
 
         driverThread.set(new AndroidDriver<>(new URL(URL), caps));

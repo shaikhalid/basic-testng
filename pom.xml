@@ -71,8 +71,8 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>3.0.0-M5</version>
                         <configuration>
-                            <parallel>tests</parallel>
-                            <threadCount>4</threadCount>
+                            <parallel>methods</parallel>
+                            <threadCount>5</threadCount>
                             <suiteXmlFiles>
                                 <suiteXmlFile>src/test/resources/web/suites/parallel.testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
@@ -107,8 +107,8 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>3.0.0-M5</version>
                         <configuration>
-                            <parallel>tests</parallel>
-                            <threadCount>2</threadCount>
+                            <parallel>methods</parallel>
+                            <threadCount>5</threadCount>
                             <suiteXmlFiles>
                                 <suiteXmlFile>src/test/resources/web/suites/mobile.testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
@@ -182,7 +182,7 @@
                             <parallel>methods</parallel>
                             <threadCount>5</threadCount>
                             <suiteXmlFiles>
-                                <suiteXmlFile>src/test/resources/app/suites/parallel2.testng.xml</suiteXmlFile>
+                                <suiteXmlFile>src/test/resources/app/suites/parallel.testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>

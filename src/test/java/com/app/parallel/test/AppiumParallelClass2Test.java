@@ -1,4 +1,4 @@
-package com.parallel.test;
+package com.app.parallel.test;
 
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class AppiumParallelClass3Test extends BaseTest {
+public class AppiumParallelClass2Test extends BaseTest {
 
     @Test
     public void searchWikipedia1() {

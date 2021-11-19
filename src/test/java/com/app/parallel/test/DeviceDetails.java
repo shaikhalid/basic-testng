@@ -1,4 +1,4 @@
-package com.app.test;
+package com.app.parallel.test;
 
 public class DeviceDetails {
 

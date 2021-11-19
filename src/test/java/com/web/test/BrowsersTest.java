@@ -1,6 +1,6 @@
-package com.app.test;
+package com.web.test;
 
-import com.app.parallel.test.DeviceDetails;
+import com.web.parallel.test.BrowserDetails;
 import io.restassured.authentication.PreemptiveBasicAuthScheme;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -8,12 +8,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.*;
 
-public class DevicesTest {
+public class BrowsersTest {
 
     private static final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     private static final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
@@ -25,7 +23,7 @@ public class DevicesTest {
         authenticationScheme.setPassword(ACCESS_KEY);
         requestSpecification = new RequestSpecBuilder()
                 .setBaseUri("https://api-cloud.browserstack.com")
-                .setBasePath("app-automate")
+                .setBasePath("automate")
                 .setAuth(authenticationScheme)
                 .build();
         responseSpecification = new ResponseSpecBuilder()
@@ -34,14 +32,13 @@ public class DevicesTest {
     }
 
     @Test
-    public void getDeviceList() {
-        List<DeviceDetails> devices = get("devices.json")
+    public void getBrowsersList() {
+        List<BrowserDetails> browserDetailsList = get("browsers.json")
                 .jsonPath()
-                .getList("", DeviceDetails.class);
-        List<DeviceDetails> androidDevices = devices.stream()
-                .filter(d -> d.getOs().equals("android"))
-                .collect(Collectors.toList());
-        androidDevices.forEach(System.out::println);
+                .getList("", BrowserDetails.class);
+        browserDetailsList.parallelStream()
+                .filter(browser -> browser.getOs().equals("Windows"))
+                .forEach(System.out::println);
     }
 
 }

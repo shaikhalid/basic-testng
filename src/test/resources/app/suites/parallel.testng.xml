@@ -2,33 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Parallel Suite">
     <test name="Parallel Test 1">
-        <parameter name="config" value="devices.json"/>
-        <classes>
-            <class name="com.app.test.AppiumParallelTest"/>
-        </classes>
-    </test>
-    <test name="Parallel Test 2">
-        <parameter name="config" value="devices.json"/>
-        <classes>
-            <class name="com.app.test.AppiumParallelTest"/>
-        </classes>
-    </test>
-    <test name="Parallel Test 3">
-        <parameter name="config" value="devices.json"/>
-        <classes>
-            <class name="com.app.test.AppiumParallelTest"/>
-        </classes>
-    </test>
-    <test name="Parallel Test 4">
-        <parameter name="config" value="devices.json"/>
-        <classes>
-            <class name="com.app.test.AppiumParallelTest"/>
-        </classes>
-    </test>
-    <test name="Parallel Test 5">
-        <parameter name="config" value="devices.json"/>
-        <classes>
-            <class name="com.app.test.AppiumParallelTest"/>
-        </classes>
+        <packages>
+            <package name="com.app.parallel.test"/>
+        </packages>
     </test>
 </suite>

@@ -1,4 +1,4 @@
-package com.parallel.test;
+package com.app.parallel.test;
 
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
@@ -6,12 +6,12 @@ import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
 
-public class AppiumParallelClass1Test extends BaseTest {
+public class AppiumParallelClass3Test extends BaseTest {
 
     @Test
     public void searchWikipedia1() {
@@ -40,5 +40,6 @@ public class AppiumParallelClass1Test extends BaseTest {
         List<MobileElement> allProductName = wait.until(d -> d.findElementsByClassName("android.widget.TextView"));
         Assert.assertTrue(allProductName.size() > 0, "Products are not present");
     }
+
 
 }
