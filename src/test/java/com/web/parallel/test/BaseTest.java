@@ -68,6 +68,7 @@ public class BaseTest {
                         .collect(Collectors.toList());
                 randomNumber = ThreadLocalRandom.current().nextInt(0, desktopBrowsers.size());
                 browserDetails = desktopBrowsers.get(randomNumber);
+                System.out.println(browserDetails);
                 caps.setCapability("name", m.getName() + " - " + browserDetails.getBrowser() + " " + browserDetails.getBrowser_version());
                 caps.setCapability("os", browserDetails.getOs());
                 caps.setCapability("os_version", browserDetails.getOs_version());
@@ -80,6 +81,7 @@ public class BaseTest {
                         .collect(Collectors.toList());
                 randomNumber = ThreadLocalRandom.current().nextInt(0, mobileBrowsers.size());
                 browserDetails = mobileBrowsers.get(randomNumber);
+                System.out.println(browserDetails);
                 caps.setCapability("name", m.getName() + " - " + browserDetails.getDevice());
                 caps.setCapability("os_version", browserDetails.getOs_version());
                 caps.setCapability("device", browserDetails.getDevice());
