@@ -11,10 +11,10 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class AppiumParallelClass2Test extends BaseTest {
+public class Parallel3Test extends BaseTest {
 
     @Test
-    public void searchWikipedia1() {
+    public void searchWikipedia5() {
         Wait<MobileDriver<MobileElement>> wait = new FluentWait<>(getMobileDriver())
                 .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(500))
@@ -28,7 +28,7 @@ public class AppiumParallelClass2Test extends BaseTest {
     }
 
     @Test
-    public void searchWikipedia2() {
+    public void searchWikipedia6() {
         Wait<MobileDriver<MobileElement>> wait = new FluentWait<>(getMobileDriver())
                 .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(500))

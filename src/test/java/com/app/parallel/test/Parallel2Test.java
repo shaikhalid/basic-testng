@@ -6,15 +6,15 @@ import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
 
-public class AppiumParallelClass1Test extends BaseTest {
+public class Parallel2Test extends BaseTest {
 
     @Test
-    public void searchWikipedia1() {
+    public void searchWikipedia3() {
         Wait<MobileDriver<MobileElement>> wait = new FluentWait<>(getMobileDriver())
                 .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(500))
@@ -28,7 +28,7 @@ public class AppiumParallelClass1Test extends BaseTest {
     }
 
     @Test
-    public void searchWikipedia2() {
+    public void searchWikipedia4() {
         Wait<MobileDriver<MobileElement>> wait = new FluentWait<>(getMobileDriver())
                 .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(500))
@@ -40,5 +40,6 @@ public class AppiumParallelClass1Test extends BaseTest {
         List<MobileElement> allProductName = wait.until(d -> d.findElementsByClassName("android.widget.TextView"));
         Assert.assertTrue(allProductName.size() > 0, "Products are not present");
     }
+
 
 }
